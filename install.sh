@@ -138,11 +138,11 @@ install_theme() {
   fi
 
   echo -e "${YELLOW}Menginstall dependensi dan apply theme...${NC}"
-  sudo cp -rfT /root/pterodactyl /var/www/pterodactyl
+  cp -rfT /root/pterodactyl /var/www/pterodactyl
 
   curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-  sudo apt install -y nodejs
-  sudo npm install -g yarn
+  apt install -y nodejs
+  npm install -g yarn
 
   cd /var/www/pterodactyl || { echo -e "${RED}Direktori tidak ditemukan!${NC}"; return; }
 
