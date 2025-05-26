@@ -195,12 +195,12 @@ wget -O /root/stellar.zip https://github.com/SkyzoOffc/Pterodactyl-Theme-Autoins
 unzip /root/stellar.zip -d /root/pterodactyl
 
 # Salin tema ke direktori Pterodactyl
-sudo cp -rfT /root/pterodactyl /var/www/pterodactyl
+cp -rfT /root/pterodactyl /var/www/pterodactyl
 
 # Instal Node.js dan Yarn
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-sudo apt install -y nodejs
-sudo npm i -g yarn
+apt install -y nodejs
+npm i -g yarn
 
 # Instal dependensi dan build tema
 cd /var/www/pterodactyl
@@ -210,8 +210,8 @@ yarn build:production
 php artisan view:clear
 
 # Hapus file dan direktori sementara
-sudo rm /root/stellar.zip
-sudo rm -rf /root/pterodactyl
+rm /root/stellar.zip
+rm -rf /root/pterodactyl
 
 echo -e "                                                       "
 echo -e "${GREEN}[+] =============================================== [+]${NC}"
